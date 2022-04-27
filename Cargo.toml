@@ -1,0 +1,13 @@
+[package]
+name = "sync-wait-group"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.56"
+authors = ["David Li <davidli2010@foxmail.com>"]
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+description = "Wait group for synchronizing the beginning or end of some computation."
+keywords = ["wait", "group", "sync", "synchronization"]
+repository = "https://github.com/davidli2010/sync-wait-group.git"
+homepage = "https://github.com/davidli2010/sync-wait-group"
+documentation = "https://docs.rs/sync-wait-group/"
