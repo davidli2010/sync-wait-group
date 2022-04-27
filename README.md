@@ -12,6 +12,31 @@ Wait group for synchronizing the beginning or end of some computation.
 This crate is duplicated `WaitGroup` from `crossbeam_utils::sync::WaitGroup`, 
 but use `parking_lot::{Mutex, Condvar}` instead of `std::sync::{Mutex, Condvar}`.
 
+## Example
+
+```rust
+use sync_wait_group::WaitGroup;
+use std::thread;
+
+// Create a new wait group.
+let wg = WaitGroup::new();
+
+for _ in 0..4 {
+    // Create another reference to the wait group.
+    let wg = wg.clone();
+
+    thread::spawn(move || {
+        // Do some work.
+
+        // Drop the reference to the wait group.
+        drop(wg);
+    });
+}
+
+// Block until all threads have finished their work.
+wg.wait();
+```
+
 ## Rust Version
 
 This version of `sync-wait-group` requires Rust 1.56 or later.
