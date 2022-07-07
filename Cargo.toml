@@ -13,4 +13,4 @@ homepage = "https://github.com/davidli2010/sync-wait-group"
 documentation = "https://docs.rs/sync-wait-group/"
 
 [dependencies]
-parking_lot = "0.12.0"
+parking_lot = "0.12.1"
